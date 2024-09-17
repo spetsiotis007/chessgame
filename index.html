@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Basic Chess Game</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Chessboard -->
+    <div id="chessboard"></div>
+    
+    <!-- Sidebar for move history -->
+    <div id="sidebar">
+        <h2>Move History</h2>
+        <ol id="move-history"></ol>
+    </div>
+
+    <!-- Captured pieces display -->
+    <div id="captured-pieces">
+        <h2>Captured Pieces</h2>
+        <div id="white-captures"></div>
+        <div id="black-captures"></div>
+    </div>
+
+    <!-- Timers display -->
+    <div id="timers">
+        <div id="white-timer">White Time: <span id="white-time">05:00</span></div>
+        <div id="black-timer">Black Time: <span id="black-time">05:00</span></div>
+    </div>
+
+    <!-- Game over modal -->
+    <div id="game-over" class="hidden">
+        <div id="game-over-message"></div>
+        <button id="restart-button">Restart Game</button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

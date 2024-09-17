@@ -1,0 +1,159 @@
+/* Reset margins and paddings */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Center the chessboard on the page */
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  height: 100vh;
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+/* Chessboard container */
+#chessboard {
+  width: 480px;
+  height: 480px;
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+  grid-template-rows: repeat(8, 1fr);
+  border: 2px solid #333;
+}
+
+/* Individual squares */
+.square {
+  width: 60px;
+  height: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 36px;
+  cursor: pointer;
+}
+
+/* Light and dark squares */
+.square.light {
+  background-color: #f0d9b5; /* Light brown */
+}
+
+.square.dark {
+  background-color: #b58863; /* Dark brown */
+}
+
+/* Piece colors */
+.piece.white {
+  color: #fff;
+}
+
+.piece.black {
+  color: #000;
+}
+
+/* Highlight selected square */
+.square.selected {
+  outline: 2px solid yellow;
+}
+
+/* Highlight possible moves */
+.square.highlight {
+  background-color: rgba(0, 255, 0, 0.5);
+}
+
+/* Game over modal */
+#game-over {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1000; /* Ensure it appears above other elements */
+  background-color: rgba(0,0,0,0.7);
+  /* Removed display: flex; from here */
+}
+
+/* Modal display */
+.modal {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+/* Hidden class to hide elements */
+.hidden {
+  display: none;
+}
+
+#game-over-message {
+  color: #fff;
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+#restart-button {
+  padding: 10px 20px;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+/* Sidebar for move history */
+#sidebar {
+  position: absolute;
+  right: 20px;
+  top: 50px;
+  width: 200px;
+  color: #333;
+}
+
+#sidebar h2 {
+  text-align: center;
+}
+
+#move-history {
+  list-style: decimal;
+  padding-left: 20px;
+}
+
+/* Captured pieces display */
+#captured-pieces {
+  position: absolute;
+  left: 20px;
+  top: 50px;
+  width: 200px;
+  color: #333;
+}
+
+#captured-pieces h2 {
+  text-align: center;
+}
+
+#white-captures, #black-captures {
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 10px;
+}
+
+#white-captures .piece, #black-captures .piece {
+  font-size: 24px;
+  margin: 2px;
+}
+
+/* Timers display */
+#timers {
+  position: absolute;
+  top: 10px;
+  width: 100%;
+  text-align: center;
+}
+
+#timers div {
+  display: inline-block;
+  margin: 0 20px;
+  font-size: 20px;
+}
